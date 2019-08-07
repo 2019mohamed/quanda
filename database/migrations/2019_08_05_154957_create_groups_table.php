@@ -20,6 +20,10 @@ class CreateGroupsTable extends Migration
             $table->unsignedBigInteger("creator_id");
             $table->timestamps();
         });
+        
+        Schema::table('groups', function (Blueprint $table) {
+            $table->softDeletes();
+        });
 
         // Schema::table('groups', function (Blueprint $table) {
         //     $table->foreign('creator_id')->references('id')->on('users');
